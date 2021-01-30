@@ -1,0 +1,15 @@
+body {
+	background-color: darkblue;
+	color: white;
+	text-align: center;
+}
+
+textarea {
+	height: 800px;
+	width: 500px;
+	text-align: left;
+}
+
+#file-path {
+    text-align: left;
+}
