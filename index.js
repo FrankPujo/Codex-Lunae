@@ -26,3 +26,15 @@ ipcRenderer.on('copying', (event) => {
 ipcRenderer.on('pasting', (event) => {
     document.execCommand('paste');
 });
+
+ipcRenderer.on('cutting', (event) => {
+    document.execCommand('cut');
+});
+
+ipcRenderer.on('undoing', (event) => {
+    document.execCommand('undo');
+});
+
+ipcRenderer.on('allselecting', (event) => {
+    document.execCommand('selectAll')
+});

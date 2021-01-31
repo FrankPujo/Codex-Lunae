@@ -53,6 +53,39 @@ const template = [
                     win.webContents.send('pasting');
                 },
             },
+            {
+                id: 'cut',
+                accelerator: 'Ctrl+X',
+                label: 'Cut',
+                click: async () => {
+                    win.webContents.send('cutting');
+                },
+            },
+            {
+                id: 'undo',
+                accelerator: 'Ctrl+Z',
+                label: 'Undo',
+                click: async () => {
+                    win.webContents.send('undoing');
+                },
+            },
+            {
+                label: 'Find',
+                accelerator: 'Ctrl+F',
+                click: async () => {
+                    dialog.showMessageBox({
+                        type: 'error',
+                        title: 'Sorry!',
+                        message: 'The finder is not available yet.',
+                    });
+                },
+            },
+            {
+                label: 'Select all',
+                click: async () => {
+                       win.webContents.send('allselecting')
+                },
+            },
         ],
     },
     {
@@ -66,8 +99,15 @@ const template = [
                     dialog.showMessageBox({
                     type: 'info',
                     title: 'Version',
-                    message: 'The version is: ' + vers
+                    message: 'App version: ' + vers
                     });
+                },
+            },
+            {
+                label: 'Repository',
+                click: async () => {
+                    const child = new BrowserWindow({parent: win});
+                    child.loadURL('https://github.com/FrankPujo/Codex-Lunae');
                 },
             },
         ],

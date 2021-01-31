@@ -1,13 +1,29 @@
 body {
-	background-color: darkblue;
+	background-color: rgb( 110, 70, 150 );
 	color: white;
 	text-align: center;
 }
 
 textarea {
-	height: 800px;
-	width: 500px;
+    color: white;
+	height: 96%;
+	width: 80%;
 	text-align: left;
+    resize: none;
+    outline-color: rgb( 115, 220, 90 );
+    border: 2px solid rgb( 155, 220, 90 );
+    position: absolute;
+    right: 1%;
+    bottom: 2%;
+}
+
+textarea:placeholder-shown {
+    background: url(img/logo2.png) center center no-repeat;
+    background-size: cover;
+}
+
+textarea:not(:placeholder-shown) {
+    background-color: black;
 }
 
 #file-path {
