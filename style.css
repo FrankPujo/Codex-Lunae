@@ -7,25 +7,37 @@ body {
 textarea {
     color: white;
 	height: 96%;
-	width: 80%;
+	width: 78%;
 	text-align: left;
     resize: none;
-    outline-color: rgb( 115, 220, 90 );
-    border: 2px solid rgb( 155, 220, 90 );
+    border: 2px solid rgb( 170, 240, 100 );
     position: absolute;
     right: 1%;
     bottom: 2%;
+    font-family: monospace;
 }
 
 textarea:placeholder-shown {
-    background: url(img/logo2.png) center center no-repeat;
+    background: url(img/logo1.png) center center no-repeat;
     background-size: cover;
 }
 
 textarea:not(:placeholder-shown) {
-    background-color: black;
+    background-color: rgb( 55, 35, 75 );
 }
 
 #file-path {
     text-align: left;
+}
+
+#lang-chooser {
+    float: left;
+}
+
+#file-path {
+    width: 22%;
+}
+
+#archive {
+    float: left;
 }

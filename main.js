@@ -14,12 +14,13 @@ const template = [
 				label: 'Save File',
 				click: async () => {
 					win.webContents.send('saveFile');
+                    const archiving = menu.getMenuItemById('archive-file');
+                    archiving.enabled = true;
 				},
 			},
 			{
 				label: 'Open File',
 				accelerator: 'Ctrl+O',
-
 				click: async () => {
 					const { filePaths } = await dialog.showOpenDialog({ properties: ['openFile'] });
 					const file = filePaths[0];
@@ -32,6 +33,14 @@ const template = [
 					saveFileItem.enabled = true;
 				},
 			},
+            {
+                id: 'archive-file',
+                label: 'Archive file',
+                enabled: false,
+                click: async () => {
+                    win.webContents.send('archive');
+                },
+            },
 		],
 	},
     {
@@ -78,6 +87,7 @@ const template = [
                         title: 'Sorry!',
                         message: 'The finder is not available yet.',
                     });
+                    win.webContents.send('finding');
                 },
             },
             {

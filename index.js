@@ -6,12 +6,15 @@ let openedFilePath;
 const codeElm = document.getElementById('code');
 
 ipcRenderer.on('fileOpened', (event, { contents, filePath }) => {
+    content = contents
 	openedFilePath = filePath;
 	codeElm.value = contents;
 	codeElm.style.display = 'inline-block';
 	document.getElementById('code').value = contents;
 	document.getElementById('file-path').innerText = filePath;
 	console.log(contents);
+    
+    var fileExtension = filePath.split(".").pop();
 });
 
 ipcRenderer.on('saveFile', (event) => {
@@ -38,3 +41,23 @@ ipcRenderer.on('undoing', (event) => {
 ipcRenderer.on('allselecting', (event) => {
     document.execCommand('selectAll')
 });
+
+/*
+ipcRenderer.on('archive', (event) => {
+    const oldFile = openedFilePath;
+    var arch1 = document.createElement("P");
+    function deArch() {
+        codeElm.value = content;
+        document.getElementById('file-path').innerText = openedFilePath;
+    };
+    arch1.innerText = oldFile;
+    arch1.onclick = deArch();
+});
+*/
+
+function selectSyntax() {
+    var selector = document.getElementById('lang-chooser');
+    var synLang = selector.value;
+    
+    return synLang
+};
