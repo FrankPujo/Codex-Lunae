@@ -42,6 +42,16 @@ ipcRenderer.on('allselecting', (event) => {
     document.execCommand('selectAll')
 });
 
+ipcRenderer.on('wrapping', (event, { wrapping } => {
+    var code = document.getElementById('code');
+    if (wrapping) {
+        code.wrap = 'on';
+        console.log('on now!!!');
+    } else {
+        code.wrap = 'off';
+    }
+});
+
 /*
 ipcRenderer.on('archive', (event) => {
     const oldFile = openedFilePath;
@@ -53,7 +63,7 @@ ipcRenderer.on('archive', (event) => {
     arch1.innerText = oldFile;
     arch1.onclick = deArch();
 });
-*/
+
 
 function selectSyntax() {
     var selector = document.getElementById('lang-chooser');
@@ -61,3 +71,4 @@ function selectSyntax() {
     
     return synLang
 };
+*/

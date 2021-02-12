@@ -99,6 +99,21 @@ const template = [
         ],
     },
     {
+        label: 'Settings',
+        submenu: [
+            {
+                label: 'Wrap',
+                type: 'checkbox',
+                id: 'wrap',
+                checked: true,
+                click: async () => {
+                    var wrapping = MenuItem.checked;
+                    win.webContents.send('wrapping', { wrapping })
+                },
+            },
+        ],
+    },
+    {
         label: 'Info',
         submenu: [
             {
