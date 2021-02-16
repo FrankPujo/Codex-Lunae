@@ -42,6 +42,7 @@ ipcRenderer.on('allselecting', (event) => {
     document.execCommand('selectAll')
 });
 
+/*
 ipcRenderer.on('wrapping', (event, { wrapping } => {
     var code = document.getElementById('code');
     if (wrapping) {
@@ -52,7 +53,6 @@ ipcRenderer.on('wrapping', (event, { wrapping } => {
     }
 });
 
-/*
 ipcRenderer.on('archive', (event) => {
     const oldFile = openedFilePath;
     var arch1 = document.createElement("P");

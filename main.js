@@ -135,6 +135,12 @@ const template = [
                     child.loadURL('https://github.com/FrankPujo/Codex-Lunae');
                 },
             },
+            {
+                label: 'Open dev tools',
+                click: async () => {
+                    win.webContents.openDevTools();
+                },
+            },
         ],
     },
 ];
